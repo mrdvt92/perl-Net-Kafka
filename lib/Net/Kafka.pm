@@ -137,7 +137,7 @@ Net::Kafka - High-performant Perl client for Apache Kafka
 
     $consumer->subscribe( [ "my_topic" ] );
     while (1) {
-        my $msg = $kafka->consumer_poll(1000);
+        my $msg = $consumer->poll(1000);
         if ($msg) {
             if ( $msg->err ) {
                 say "Error: ", Net::Kafka::Error::to_string($err);
